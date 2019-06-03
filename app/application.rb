@@ -17,7 +17,7 @@ class Application
       resp.write handle_search(search_term)
 
 
-      # why ??
+      # if there is no item in cart, show each item in the cart
 
     elsif req.path.match(/cart/)
       if @@cart == []
@@ -30,7 +30,7 @@ class Application
 
     elsif req.path.match(/add/)
       # what should I put instead of "q"??
-      add_item = req.params["q"]
+      add_item = req.params["item"]
       resp.write handle_add(add_item)
 
     else
